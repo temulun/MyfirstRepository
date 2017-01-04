@@ -1,0 +1,449 @@
+@charset "UTF-8";
+.ui-uploader-box {
+    * {
+        box-sizing: content-box;
+    }
+    .btn {
+        display: inline-block;
+        padding: 0 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        height: 26px;
+        line-height: 26px;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 2px;
+    }
+    .btn-xs {
+        height: 20px;
+        line-height: 20px;
+        padding: 0 6px;
+    }
+    .btn-lg {
+        height: 54px;
+        line-height: 54px;
+        padding: 0 20px;
+        font-size: 18px;
+    }
+    .btn-primary {
+        background-color: #ea3e48;
+        border-color: #ea3e48;
+        color: #fff;
+    }
+    .btn-default {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+        &:hover {
+            color: #333;
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+    }
+    .clearfix {
+        zoom: 1;
+        &:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    }
+    .ui-box-bd {
+        padding: 0;
+    }
+    .ui-uploader {
+        width: 592px;
+        height: 490px;
+        margin: 5px 0 0 0;
+        .uploader-main {
+            height: 454px;
+            padding: 5px;
+            .uploader-tab {
+                float: left;
+                width: 470px;
+                .tab-title {
+                    height: 26px;
+                    position: relative;
+                    z-index: 10;
+                    top: 0;
+                    left: 0;
+                    margin: 0;
+                    li {
+                        height: 25px;
+                        float: left;
+                        &.activate {
+                            a {
+                                text-decoration: none;
+                                background: #fff;
+                                height: 26px;
+                            }
+                        }
+                        a {
+                            display: block;
+                            height: 25px;
+                            line-height: 24px;
+                            margin-right: 5px;
+                            border: 1px solid #E1E5E6;
+                            border-radius: 2px 2px 0 0;
+                            border-bottom: none;
+                            overflow: hidden;
+                            padding: 0 8px;
+                            background: #F6F6F6;
+                            color: #000;
+                            &:hover {
+                                text-decoration: none;
+                                background: #fff;
+                            }
+                        }
+                    }
+                }
+                .tab-container {
+                    border: 1px solid #E1E5E6;
+                    width: 459px;
+                    height: 418px;
+                    overflow: hidden;
+                    .local-container,
+                    .network-container,
+                    .album-container {
+                        overflow: hidden;
+                        display: none;
+                        height: 418px;
+                    }
+                    //本地上传
+                    .local-container {
+                        position: relative;
+                        .local-init {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 418px;
+                            .local-tips {
+                                margin: 120px 0 10px;
+                                color: #ccc;
+                                text-align: center;
+                                font-size: 14px;
+                            }
+                            .btn {
+                                display: block;
+                                margin: 0 auto;
+                                width: 154px;
+                                height: 56px;
+                                line-height: 54px;
+                                position: relative;
+                                padding: 0;
+                                background-color: #ea3e48;
+                                color: #fff;
+                                border: 1px solid #ea3e48;
+                                border-radius: 2px;
+                                text-align: center;
+                                button {
+                                    display: block;
+                                    margin: 0 auto;
+                                    width: 152px;
+                                    height: 54px;
+                                    line-height: 54px;
+                                    position: relative;
+                                    padding: 0;
+                                    background-color: #ea3e48;
+                                    color: #fff;
+                                    border: 1px solid #ea3e48;
+                                    border-radius: 2px;
+                                    text-align: center;
+                                }
+                                .uploadify-button-wrapper {
+                                    .swfupload {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .local-uploading {
+                            display: none;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            .local-op {
+                                width: 100%;
+                                height: 25px;
+                                line-height: 24px;
+                                border-bottom: 1px solid #DEE0E2;
+                                div {
+                                    float: right;
+                                    display: block;
+                                    height: 25px;
+                                    line-height: 24px;
+                                }
+                                .btn {
+                                    float: right;
+                                    margin: 1px 5px 0 5px;
+                                }
+                            }
+                            .img-list {
+                                height: 391px;
+                                overflow-y: scroll;
+                                padding: 0 0 5px 0;
+                                li {
+                                    border: 1px solid #eee;
+                                    border-radius: 2px;
+                                    padding: 1px;
+                                    position: relative;
+                                    float: left;
+                                    width: 100px;
+                                    height: 100px;
+                                    margin: 5px 0 0 5px;
+                                    .img-name {
+                                        width: 100px;
+                                        height: 100px;
+                                        color: #333;
+                                        overflow: hidden;
+                                        padding: 10px 5px;
+                                    }
+                                    .progress-box {
+                                        width: 100%;
+                                        height: 5px;
+                                        border-top: 1px solid #eee;
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        .progress-line {
+                                            background-color: #54B5EA;
+                                            width: 0;
+                                            height: 5px;
+                                        }
+                                    }
+                                    .img-cancel {
+                                        position: absolute;
+                                        display: block;
+                                        width: 20px;
+                                        height: 20px;
+                                        line-height: 20px;
+                                        text-align: center;
+                                        font-size: 12px;
+                                        right: 0;
+                                        top: 0;
+                                        background-color: #54B5EA;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .local-container-uploading {
+                        .local-init {
+                            left: -500px;
+                        }
+                        .local-uploading {
+                            display: block;
+                        }
+                    }
+                    //网络上传
+                    .network-container {
+                        .network-main {
+                            padding: 100px 0 0 28px;
+                            .network-tips {
+                                color: #444;
+                            }
+                            .network-input {
+                                padding: 10px 0 0 0;
+                                input {
+                                    height: 24px;
+                                    line-height: 24px;
+                                    color: #999;
+                                    width: 360px;
+                                    float: left;
+                                    border: 1px solid #54B5EA;
+                                    border-radius: 3px 0 0 3px;
+                                    padding: 0 5px;
+                                }
+                                a {
+                                    display: block;
+                                    float: left;
+                                    height: 26px;
+                                    line-height: 26px;
+                                    padding: 0 8px;
+                                    background: #54B5EA;
+                                    color: #fff;
+                                    border-radius: 0 3px 3px 0;
+                                    &:hover {
+                                        background-color: #55BAF1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //相册选择
+                    .album-container {
+                        .empty {
+                            width: 100%;
+                            height: 100%;
+                            line-height: 416px;
+                            text-align: center;
+                        }
+                        .img-list {
+                            height: 386px;
+                            overflow-y: scroll;
+                            padding: 0 0 5px 0;
+                            li {
+                                border: 1px solid #eee;
+                                border-radius: 2px;
+                                padding: 1px;
+                                position: relative;
+                                float: left;
+                                width: 100px;
+                                height: 100px;
+                                margin: 5px 0 0 5px;
+                                line-height: 100px;
+                                font-size: 0;
+                                cursor: pointer;
+                                img {
+                                    max-width: 100px;
+                                    max-width: 100px;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                }
+                                .img-list-mask {
+                                    width: 102px;
+                                    height: 102px;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    background: url(./images/right.png) 50% 50% no-repeat;
+                                    display: none;
+                                }
+                                &.activate {
+                                    .img-list-mask {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .selected-box {
+                float: right;
+                overflow: hidden;
+                width: 110px;
+                border: 1px solid #E1E5E6;
+                height: 443px;
+                .selected-tips {
+                    height: 25px;
+                    text-align: center;
+                    line-height: 24px;
+                    border-bottom: 1px solid #DEE0E2;
+                }
+                .selected-op {
+                    height: 25px;
+                    text-align: center;
+                    line-height: 24px;
+                    border-bottom: 1px solid #DEE0E2;
+                    a {
+                        display: inline-block;
+                        line-height: 20px;
+                        margin: 0 2px 0 0;
+                        color: #527CD2;
+                        font-size: 10px;
+                        &:hover {
+                            color: #7DC1EF;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .selected-images {
+                    height: 391px;
+                    padding: 5px 0 5px 5px;
+                    overflow-y: scroll;
+                    li {
+                        cursor: pointer;
+                        margin-bottom: 5px;
+                        width: 84px;
+                        height: 84px;
+                        line-height: 80px;
+                        border: 1px solid #eee;
+                        position: relative;
+                        font-size: 0;
+                        text-align: center;
+                        img {
+                            max-width: 84px;
+                            max-height: 84px;
+                            vertical-align: middle;
+                        }
+                        .selected-images-op,
+                        .selected-images-mask {
+                            display: none;
+                            position: absolute;
+                            width: 84px;
+                            height: 24px;
+                            bottom: 0;
+                            left: 0;
+                        }
+                        .selected-images-op {
+                            z-index: 2;
+                            a {
+                                float: right;
+                                display: block;
+                                height: 24px;
+                                line-height: 24px;
+                                margin: 0 5px 0 0;
+                                color: #ccc;
+                                font-size: 10px;
+                                &:hover {
+                                    color: #fff;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                        .selected-images-mask {
+                            z-index: 1;
+                            background-color: #000;
+                            opacity: 0.5;
+                            filter: alpha(opacity=50);
+                        }
+                    }
+                    li:hover,
+                    li.activate {
+                        .selected-images-op,
+                        .selected-images-mask {
+                            display: block;
+                        }
+                        border: 1px solid #7DC1EF;
+                    }
+                }
+            }
+        }
+        .uploader-bottom {
+            padding: 0 5px;
+            height: 36px;
+            background: #F3F3F3;
+            border-top: 1px solid #E1E5E6;
+            .tips {
+                float: left;
+                width: 70%;
+                height: 35px;
+                line-height: 35px;
+                color: #444;
+            }
+            .btns {
+                float: right;
+                width: 30%;
+                .btn {
+                    float: right;
+                    margin: 3px 0 0 5px;
+                }
+            }
+        }
+    }
+}
